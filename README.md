@@ -13,6 +13,9 @@ The implementation is designed for projects that need a lightweight worker pool 
 You can compile the code and test it with `gcc` and the POSIX thread library. From the repository root:
 
 ```sh
+# for compiling to shared library
+gcc -shared -fPIC -o threadpoollib.so threadpool.c task_queue.c
+
 # for testing threadpool
 gcc -pthread -o threadpool_test unit_tests/threadpool_test.c threadpool.c task_queue.c 
 # run with 
